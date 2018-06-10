@@ -1,4 +1,4 @@
-# Marble
+# Marble [![CircleCI](https://circleci.com/gh/pragmaticivan/react-marble.svg?style=shield)](https://circleci.com/gh/pragmaticivan/react-marble)
 
 > A set of UI components behind [WeDeploy](https://wedeploy.com).
 
@@ -8,13 +8,11 @@
 
 2.  Install global dependencies:
 
-
 ```
 [sudo] npm install -g yarn
 ```
 
 3.  Install project dependencies:
-
 
 ```
 yarn install
@@ -22,13 +20,11 @@ yarn install
 
 4.  Run tests for all packages:
 
-
 ```
 npm test
 ```
 
 5.  Publish:
-
 
 ```
 npm run publish
