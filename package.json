@@ -9,7 +9,7 @@
     "esm"
   ],
   "engines": {
-    "node": ">=8"
+    "node": ">=8.11.2"
   },
   "contributors": [
     "Ivan Santos (https://ivansantos.me)"
@@ -79,6 +79,7 @@
   "scripts": {
     "test": "jest",
     "prepublishOnly": "yarn run build",
+    "deploy-storybook": "storybook-to-ghpages",
     "precommit": "lint-staged",
     "dev": "start-storybook -p 6006",
     "create-package": "./tools/create-package.js",
