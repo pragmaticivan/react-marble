@@ -57,8 +57,9 @@
     "size-limit": "^0.14.0"
   },
   "prettier": {
-    "semi": false,
-    "singleQuote": true
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "lint-staged": {
     "*.js": [
