@@ -1,0 +1,94 @@
+{
+  "name": "marble",
+  "version": "1.0.0",
+  "description": "React UI Kit by WeDeploy",
+  "main": "commonjs/index.js",
+  "module": "esm/index.js",
+  "files": [
+    "commonjs",
+    "esm"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "contributors": [
+    "Ivan Santos (https://ivansantos.me)"
+  ],
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "keywords": [
+    "marble",
+    "wedeploy",
+    "ui",
+    "react"
+  ],
+  "repository": "wedeploy/marble",
+  "license": "MIT",
+  "dependencies": {
+    "@reactions/component": "^2.0.2",
+    "prop-types": "^15.6.1",
+    "ui-box": "^1.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.17",
+    "@storybook/addon-links": "^3.2.17",
+    "@storybook/addon-options": "^3.2.17",
+    "@storybook/addons": "^3.2.17",
+    "@storybook/react": "^3.2.17",
+    "@storybook/storybook-deployer": "^2.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint-config-prettier": "^2.9.0",
+    "fs-extra": "^6.0.1",
+    "husky": "^0.14.3",
+    "jest": "^23.1.0",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-test-renderer": "^16.4.0",
+    "size-limit": "^0.14.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "size-limit": [
+    {
+      "path": "commonjs/index.js",
+      "limit": "70 KB"
+    }
+  ],
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "yarn run build",
+    "precommit": "lint-staged",
+    "dev": "start-storybook -p 6006",
+    "create-package": "./tools/create-package.js",
+    "create-package:components": "./tools/create-package-components.js",
+    "create-docs-template": "./tools/create-docs-template.js",
+    "build-storybook": "build-storybook -s .storybook/static -o .out",
+    "build-commonjs": "BABEL_ENV=commonjs babel src --out-dir commonjs --ignore stories,test,docs --source-maps inline",
+    "build-esm": "BABEL_ENV=esm babel src --out-dir esm --ignore stories,test,docs --source-maps inline",
+    "build": "yarn run build-commonjs && yarn run build-esm",
+    "clean": "git clean -Xdf",
+    "release": "np --no-publish"
+  }
+}

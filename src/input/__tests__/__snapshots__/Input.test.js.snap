@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sandbox 1`] = `
+<div>
+  <input
+    autoComplete="on"
+    readOnly={false}
+    type="text"
+  />
+  
+</div>
+`;
