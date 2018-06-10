@@ -1,6 +1,6 @@
-import { storiesOf } from '@storybook/react'
-import React from 'react'
-import { Input } from '../../input'
+import { storiesOf } from '@storybook/react';
+import React from 'react';
+import { Input } from '../../input';
 
 storiesOf('Input', module)
   .add('Input text', () => (
@@ -24,4 +24,4 @@ storiesOf('Input', module)
     <div>
       <Input isTogglePassword />
     </div>
-  ))
+  ));

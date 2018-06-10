@@ -1,2 +1,2 @@
-import Input from './src/Input'
-export { Input }
+import Input from './src/Input';
+export { Input };

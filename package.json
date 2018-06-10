@@ -91,6 +91,7 @@
     "build-esm": "BABEL_ENV=esm babel src --out-dir esm --ignore stories,test,docs --source-maps inline",
     "build": "yarn run build-commonjs && yarn run build-esm",
     "clean": "git clean -Xdf",
+    "format": "prettier --write \"{src,__{tests,mocks}__}/**/*.js\"",
     "release": "np --no-publish"
   }
 }

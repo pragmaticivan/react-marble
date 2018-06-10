@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Input extends PureComponent {
   static propTypes = {
@@ -89,8 +89,8 @@ export default class Input extends PureComponent {
      * Defines the current value
      * @type {string}
      */
-    value: PropTypes.string
-  }
+    value: PropTypes.string,
+  };
 
   static defaultProps = {
     autocomplete: 'on',
@@ -98,34 +98,34 @@ export default class Input extends PureComponent {
     isTogglePassword: false,
     initialShow: false,
     editableWhileVisible: false,
-    readonly: false
-  }
+    readonly: false,
+  };
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       isShowing: this.props.initialShow,
-      readonly: this.props.readonly
-    }
+      readonly: this.props.readonly,
+    };
 
     if (this.props.editableWhileVisible) {
       if (!this.props.value || (this.props.value && this.props.value === '')) {
-        this.state.isShowing = true
-        this.state.readonly = true
+        this.state.isShowing = true;
+        this.state.readonly = true;
       } else {
-        this.state.readonly = !this.state.isShowing
+        this.state.readonly = !this.state.isShowing;
       }
     }
 
-    this.handleToggle = this.handleToggle.bind(this)
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleToggle() {
-    this.setState({ ...this.state, ...{ isShowing: !this.state.isShowing } })
+    this.setState({ ...this.state, ...{ isShowing: !this.state.isShowing } });
 
     if (this.props.editableWhileVisible) {
-      this.setState({ ...this.state, ...{ readonly: !this.state.isShowing } })
+      this.setState({ ...this.state, ...{ readonly: !this.state.isShowing } });
     }
   }
 
@@ -144,13 +144,13 @@ export default class Input extends PureComponent {
       type,
       value,
       ...props
-    } = this.props
+    } = this.props;
 
     const inputType = isTogglePassword
       ? this.state.isShowing
         ? 'text'
         : 'password'
-      : type
+      : type;
 
     return (
       <div>
@@ -169,7 +169,7 @@ export default class Input extends PureComponent {
         />
         {isTogglePassword ? this.togglePassword() : ''}
       </div>
-    )
+    );
   }
 
   togglePassword() {
@@ -186,6 +186,6 @@ export default class Input extends PureComponent {
           {this.state.isShowing ? 'Hide' : 'Show'}
         </div>
       </button>
-    )
+    );
   }
 }
